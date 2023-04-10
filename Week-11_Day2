@@ -1,0 +1,136 @@
+Q1.
+Write a program to take "n" String inputs from user and store them in array (where "n" is no. of String objects specified by user at run-time). Sort the array in ascending order and display the array. If "n" entered by user is less than 2, then display message "Invalid".
+
+Input Format
+
+Your program should take the input of "n" string objects.
+
+Constraints
+
+No. of string objects entered by the user should be greater than 1.
+
+Output Format
+
+Your program should display the array of strings in sorted ascending order.
+
+Sample Input 0
+
+4
+India
+America
+Australia
+France
+Sample Output 0
+
+America
+Australia
+France
+India
+SOL:
+import java.util.Arrays;
+
+import java.util.Scanner;
+
+public class StringSorter {
+
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+
+        int n = sc.nextInt();
+
+        if (n < 2) {
+
+            System.out.println("Invalid");
+
+            System.exit(0);
+
+        }
+
+        String[] arr = new String[n];
+
+        for (int i = 0; i < n; i++) {
+
+            arr[i] = sc.next();
+
+        }
+
+        Arrays.sort(arr);
+
+        for (String s : arr) {
+
+            System.out.println(s);
+
+        }
+
+        sc.close();
+
+    }
+
+}
+Q2.
+Write a program to take the input of String and display all the characters present in the input string in sorted order with their count. If the length of the string will be less than equal to 5, display the message “Invalid Input”.
+
+Input Format
+
+Your program should take the input of one string.
+
+Constraints
+
+Length of strings should be greater than 5.
+
+Output Format
+
+Your program should display the characters present in the string in sorted order with their count.
+
+Sample Input 0
+
+hurrey
+Sample Output 0
+
+e1h1r2u1y1
+SOL:
+
+
+    
+import java.util.Scanner;
+
+import java.util.TreeMap;
+
+public class Main {
+
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+
+        String s = sc.nextLine();
+
+        sc.close();
+
+        if (s.length() <= 5) {
+
+            System.out.println("Invalid Input");
+
+        } else {
+
+            TreeMap<Character, Integer> tm = new TreeMap<>();
+
+            for (char c : s.toCharArray()) {
+
+                tm.put(c, tm.getOrDefault(c, 0) + 1);
+
+            }
+
+            for (char k : tm.keySet()) {
+
+                System.out.print(k + "" + tm.get(k));
+
+            }
+
+            System.out.println();
+
+        }
+
+    }
+
+}
