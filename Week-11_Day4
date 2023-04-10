@@ -1,0 +1,148 @@
+Q1.Raju, Rohit and Ramesh were playing a game where Raju instructs Rohit to open and close two pairs of parenthesis bracket and place your name inside the bracket tags then Rohit instructs Ramesh to open and close three pairs of curly brackets and place your name inside the bracket tag then at last Ramesh instructs Raju to open and close four pairs of square brackets and place your name inside the bracket tag.
+
+Input Format
+
+(()) Rohit
+
+Constraints
+
+First user input should be bracketing tags and the next user input should be string names In the output name should be in the middle of the bracket tags.
+
+Output Format
+
+((Rohit))
+
+Sample Input 0
+
+(())
+Rohit
+Sample Output 0
+
+((Rohit))
+SOL:
+import java.io.*;
+
+import java.util.*;
+
+public class Brackets
+
+{
+
+    public static void main(String[] args)
+
+    {
+
+        Scanner sc=new Scanner(System.in);
+
+        String s1=sc.nextLine();
+
+        String s2=sc.nextLine();
+
+        for(int i=0;i<=s1.length();i++)
+
+        {
+
+            if(s1.charAt(i)=='('||s1.charAt(i)=='{')
+
+                System.out.print(s1.charAt(i));
+
+            else
+
+            {
+
+                System.out.print(s2);
+
+                for(int j=i;j<s1.length();j++)
+
+                    System.out.print(s1.charAt(i));
+
+                break;
+
+            }
+
+        }
+
+    }
+
+}
+Q2.
+WAP to accpet one array of stings and integers.and count the number of stings and integers present in the array. Example Input: First line Accept size of array second line accept all elements like Array = {"Raj", "77", "101", "99", "Jio"}
+
+Output: 3 2
+
+Input Format
+
+First line accept sixe of the array(n) second line accepts the n elements/values .
+
+Constraints
+
+the array is one string type array and n>0
+
+Output Format
+
+First line print the number of Integers present Second line prints the number of Strings present
+
+Sample Input 0
+
+5
+Raj 77 101 99 Jio
+Sample Output 0
+
+3
+2
+SOL:
+import java.util.Scanner;
+
+public class Solution 
+
+{
+
+    static boolean isNumber(String s)
+
+    {
+
+        for(int x=0;x<s.length();x++)
+
+        {
+
+            if(s.charAt(x)-'0'>=0&&s.charAt(x)-'9'<=0){}
+
+            else
+
+                return false;
+
+        }
+
+        return true;
+
+    }
+
+    public static void main(String[] args) 
+
+    {
+
+        Scanner sc=new Scanner(System.in);
+
+        int y=sc.nextInt(),c=0;
+
+        String s[]=new String[y];
+
+        for(int x=0;x<y;x++)
+
+        {
+
+            s[x]=sc.next();
+
+            if(isNumber(s[x]))
+
+                c++;
+
+        }
+
+        System.out.println(c);
+
+        System.out.println(y-c);
+
+    }
+
+}
